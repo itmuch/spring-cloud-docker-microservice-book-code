@@ -1,6 +1,8 @@
 server:
   port: 8000
 spring:
+  application:
+    name: microservice-provider-user
   jpa:
     generate-ddl: false
     show-sql: true
@@ -17,3 +19,7 @@ logging:                                # 配置日志级别，让hibernate打�
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.itmuch.youran.persistence: ERROR
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
