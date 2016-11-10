@@ -3,12 +3,6 @@ server:
 spring:
   application:
     name: microservice-consumer-movie
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    preferIpAddress: true
 microservice-provider-user:
   ribbon:
     listOfServers: localhost:8000,localhost:8001
