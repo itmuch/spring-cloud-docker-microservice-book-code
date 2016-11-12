@@ -27,7 +27,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests().anyRequest().authenticated().and().formLogin().and().httpBasic();
+    // 所有的请求，都需要经过HTTP basic认证
+    http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
+  }
+
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    // 明文编码器。这是一个不做任何操作的密码编码器，是Spring提供给我们做明文测试的。
+    // A password encoder that does nothing. Useful for testing where working with plain text
+    return NoOpPasswordEncoder.getInstance();
   }
 
   @Autowired
@@ -36,38 +44,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.userDetailsService(this.userDetailsService).passwordEncoder(this.passwordEncoder());
-
-  }
-
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-    // org.springframework.security.authentication.encoding.PasswordEncoder
-    // org.springframework.security.crypto.password.PasswordEncoder
-    return NoOpPasswordEncoder.getInstance();
   }
 
   @Component
   class CustomUserDetailsService implements UserDetailsService {
+    /**
+     * 模拟两个账户：
+     * ① 账号是user，密码是password1，角色是user-role
+     * ② 账号是admin，密码是password2，角色是admin-role
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
       if ("user".equals(username)) {
-
-        return new SecurityUser("user", "user", "user");
-      }
-
-      else if ("admin".equals(username)) {
-        return new SecurityUser("admin", "admin", "admin");
-      }
-
-      else {
+        return new SecurityUser("user", "password1", "user-role");
+      } else if ("admin".equals(username)) {
+        return new SecurityUser("admin", "password2", "admin-role");
+      } else {
         return null;
       }
     }
   }
 
   class SecurityUser implements UserDetails {
-
     private static final long serialVersionUID = 1L;
 
     public SecurityUser(String username, String password, String role) {
@@ -87,11 +85,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
       Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
       SimpleGrantedAuthority authority = new SimpleGrantedAuthority(this.role);
       authorities.add(authority);
-
       return authorities;
     }
 
