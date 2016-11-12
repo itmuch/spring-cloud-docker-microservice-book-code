@@ -28,12 +28,12 @@ public class UserController {
       UserDetails user = (UserDetails) principal;
       Collection<? extends GrantedAuthority> collection = user.getAuthorities();
       for (GrantedAuthority c : collection) {
+        // 打印当前登录用户的信息
         UserController.LOGGER.info("当前用户是{}，角色是{}", user.getUsername(), c.getAuthority());
       }
     } else {
       // do other things
     }
-
     User findOne = this.userRepository.findOne(id);
     return findOne;
   }
