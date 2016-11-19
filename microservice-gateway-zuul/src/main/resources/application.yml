@@ -7,6 +7,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-zuul:
-  routes:
-    api: /api/**
