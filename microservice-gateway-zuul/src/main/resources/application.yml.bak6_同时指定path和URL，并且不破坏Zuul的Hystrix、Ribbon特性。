@@ -1,0 +1,20 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes:
+    user-route:
+      path: /user/**
+      service-id: microservice-provider-user
+ribbon:
+  eureka:
+    enabled: false    # 禁用掉ribbon的eureka使用。详见：http://cloud.spring.io/spring-cloud-static/Camden.SR2/#_example_disable_eureka_use_in_ribbon
+microservice-provider-user:
+  ribbon:
+    listOfServers: localhost:8000,localhost:8001
