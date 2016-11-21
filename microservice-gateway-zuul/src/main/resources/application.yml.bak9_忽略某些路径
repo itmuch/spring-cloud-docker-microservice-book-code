@@ -10,5 +10,6 @@ eureka:
   instance:
     prefer-ip-address: true
 zuul:
+  ignoredPatterns: /**/admin/**   # 忽略所有包括/admin/的路径
   routes:
     microservice-provider-user: /user/**

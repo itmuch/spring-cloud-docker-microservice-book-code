@@ -7,10 +7,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
 zuul:
   routes:
     user-route:                   # 该配置方式中，user-route只是给路由一个名称，可以任意起名。
       url: http://localhost:8000/ # 指定的url
       path: /user/**              # url对应的路径。
-  instance:
-    prefer-ip-address: true

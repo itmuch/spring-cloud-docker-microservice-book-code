@@ -7,7 +7,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-zuul:
-  ignored-services: microservice-provider-user,microservice-consumer-movie
   instance:
     prefer-ip-address: true
+zuul:
+  ignored-services: microservice-provider-user,microservice-consumer-movie

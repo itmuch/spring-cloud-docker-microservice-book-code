@@ -10,5 +10,8 @@ eureka:
   instance:
     prefer-ip-address: true
 zuul:
+  prefix: /api
   routes:
-    microservice-provider-user: /user/**
+    microservice-provider-user: 
+      path: /user/**
+      strip-prefix: false   # 是否去掉前缀，默认是true。该属性与zuul.prefix联合使用。
