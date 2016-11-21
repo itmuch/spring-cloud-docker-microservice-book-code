@@ -10,3 +10,5 @@ eureka:
 zuul:
   routes:
     microservice-provider-user: /user/**
+  instance:
+    prefer-ip-address: true
