@@ -10,8 +10,12 @@ eureka:
   instance:
     prefer-ip-address: true
 zuul:
-  prefix: /api
   routes:
     microservice-provider-user: 
       path: /user/**
-      strip-prefix: false   # 是否去掉前缀，默认是true。该属性与zuul.prefix联合使用。
+      strip-prefix: false
+logging:
+  level:
+    com.netflix: DEBUG
+    
+# 这样访问Zuul的/user/1路径，请求将会被转发到microservice-provider-user的/user/1，可以查看日志打印，有助于理解。

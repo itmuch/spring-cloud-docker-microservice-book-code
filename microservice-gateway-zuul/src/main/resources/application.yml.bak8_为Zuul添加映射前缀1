@@ -1,0 +1,21 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  prefix: /api
+  strip-prefix: false
+  routes:
+    microservice-provider-user: /user/**
+logging:
+  level:
+    com.netflix: DEBUG
+    
+# 访问Zuul的/api/microservice-provider-user/1路径，请求将会被转发到microservice-provider-user的/api/1，，可以查看日志打印，有助于理解。
