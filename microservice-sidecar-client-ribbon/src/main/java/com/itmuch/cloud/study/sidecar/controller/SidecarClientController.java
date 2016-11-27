@@ -12,7 +12,7 @@ public class SidecarClientController {
 
   @GetMapping("/test")
   public String findById() {
-    // 将会请求到：http://localhost:8060/
+    // 将会请求到：http://localhost:8060/，返回结果：{"index":"欢迎来到首页"}
     return this.restTemplate.getForObject("http://microservice-sidecar-node-service/", String.class);
   }
 }
