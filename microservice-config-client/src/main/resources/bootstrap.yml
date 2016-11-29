@@ -1,8 +1,10 @@
+server:
+  port: 8080
 spring:
   application:
-    name: microservice-foo              # 对应microservice-config-server所获取的配置文件的{application}
+    name: microservice-foo    # 对应config server所获取的配置文件的{application}
   cloud:
     config:
       uri: http://localhost:8888/
-      profile: dev                      # 指定profile，对应microservice-config-server所获取的配置文件中的{profile} 
-      label: master                     # 指定git仓库的分支，对应microservice-config-server所获取的配置文件的{label}
+      profile: dev            # profile对应config server所获取的配置文件中的{profile} 
+      label: master           # 指定git仓库的分支，对应config server所获取的配置文件的{label}
