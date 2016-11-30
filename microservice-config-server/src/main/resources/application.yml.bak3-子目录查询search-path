@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://git.oschina.net/itmuch/spring-cloud-config-repo
+          search-paths: foo,bar*
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.springframework.boot: DEBUG
+
+# 测试：访问http://localhost:8080/application/default

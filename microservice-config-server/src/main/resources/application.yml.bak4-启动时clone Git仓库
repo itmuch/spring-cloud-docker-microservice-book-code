@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+          repos:
+            team-a:
+                pattern:  microservice-*
+                clone-on-start: true
+                uri: http://git.oschina.net/itmuch/spring-cloud-config-repo
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.springframework.boot: DEBUG
+
+# 测试：
+# 1.观察启动日志
+# 2.访问http://localhost:8080/microservice-foo/dev
