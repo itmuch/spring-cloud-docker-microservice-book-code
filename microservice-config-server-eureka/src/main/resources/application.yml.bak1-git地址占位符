@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://git.oschina.net/itmuch/{application}
+          username:                                                         # git仓库的账号
+          password:                                                         # git仓库的密码
+logging:
+  level:
+    org.springframework.cloud: DEBUG
+    org.springframework.boot: DEBUG
+    
+## 测试：可以使用http://localhost:8080/spring-cloud-config-repo-default.yml 获取到http://localhost:8080/spring-cloud-config-repo下的application.properties
