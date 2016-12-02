@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: microservice-config-server
+    name: microservice-config-server-eureka
   cloud:
     config:
       server:
