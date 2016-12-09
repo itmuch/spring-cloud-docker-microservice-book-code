@@ -63,7 +63,8 @@
         </executions>
         <configuration>
           <imageName>itmuch/microservice-discovery-eureka-dockerfile:0.0.3</imageName>
-          <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+          <baseImage>java</baseImage>
+          <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
           <resources>
             <resource>
               <targetPath>/</targetPath>
