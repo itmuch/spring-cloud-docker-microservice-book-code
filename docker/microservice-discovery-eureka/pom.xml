@@ -62,7 +62,7 @@
           </execution>
         </executions>
         <configuration>
-          <imageName>itmuch/microservice-discovery-eureka-dockerfile:0.0.3</imageName>
+          <imageName>itmuch/microservice-discovery-eureka:0.0.3</imageName>
           <baseImage>java</baseImage>
           <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
           <resources>
