@@ -53,7 +53,7 @@
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.4.13</version>
         <configuration>
-          <imageName>microservice-discovery-eureka-dockerfile</imageName>
+          <imageName>itmuch/microservice-discovery-eureka-dockerfile:0.0.2</imageName>
           <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
           <resources>
             <resource>
