@@ -48,13 +48,15 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
 
+      <!-- 添加docker-maven插件 -->
       <plugin>
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.4.13</version>
         <configuration>
-          <imageName>microservice-discovery-eureka-dockerfile</imageName>
-          <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+          <imageName>itmuch/microservice-discovery-eureka:0.0.1</imageName>
+          <baseImage>java</baseImage>
+          <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
           <resources>
             <resource>
               <targetPath>/</targetPath>
