@@ -52,17 +52,8 @@
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.4.13</version>
-        <executions>
-          <execution>
-            <id>build-image</id>
-            <phase>package</phase>
-            <goals>
-              <goal>build</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
-          <imageName>itmuch/microservice-discovery-eureka-dockerfile:0.0.3</imageName>
+          <imageName>itmuch/microservice-discovery-eureka-dockerfile:0.0.2</imageName>
           <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
           <resources>
             <resource>
