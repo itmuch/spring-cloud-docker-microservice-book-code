@@ -53,11 +53,7 @@
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.4.13</version>
         <configuration>
-          <imageName>itmuch/microservice-discovery-eureka</imageName>
-          <imageTags>
-            <imageTag>0.0.5</imageTag>
-            <imageTag>latest</imageTag>
-          </imageTags>
+          <imageName>itmuch/microservice-discovery-eureka:0.0.4</imageName>
           <baseImage>java</baseImage>
           <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
           <resources>
