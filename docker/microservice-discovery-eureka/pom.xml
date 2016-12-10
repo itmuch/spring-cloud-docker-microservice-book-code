@@ -63,10 +63,10 @@
               <include>${project.build.finalName}.jar</include>
             </resource>
           </resources>
-        </configuration>
 
-        <!-- 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 -->
-        <serverId>docker-hub</serverId>
+          <!-- 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 -->
+          <serverId>docker-hub</serverId>
+        </configuration>
       </plugin>
     </plugins>
   </build>
