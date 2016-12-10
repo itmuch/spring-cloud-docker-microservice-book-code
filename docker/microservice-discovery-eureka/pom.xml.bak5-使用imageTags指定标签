@@ -54,6 +54,7 @@
         <version>0.4.13</version>
         <configuration>
           <imageName>itmuch/microservice-discovery-eureka</imageName>
+          <!-- 使用imageTags指定标签名称 -->
           <imageTags>
             <imageTag>0.0.5</imageTag>
             <imageTag>latest</imageTag>
@@ -67,9 +68,6 @@
               <include>${project.build.finalName}.jar</include>
             </resource>
           </resources>
-
-          <!-- 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 -->
-          <serverId>docker-hub</serverId>
         </configuration>
       </plugin>
     </plugins>
