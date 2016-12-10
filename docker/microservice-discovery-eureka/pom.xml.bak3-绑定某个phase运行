@@ -73,9 +73,6 @@
             </resource>
           </resources>
         </configuration>
-
-        <!-- 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 -->
-        <serverId>docker-hub</serverId>
       </plugin>
     </plugins>
   </build>
