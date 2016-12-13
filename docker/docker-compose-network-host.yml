@@ -32,4 +32,4 @@ services:
     - 8040:8040
 
 ## 注1：本Compose文件使用的网络模式是host，使用这种模式，可以让所有的微服务都无需修改eureka.client.serviceUrl.defautlZone的配置，而直接使用http://localhost:8761/eureka/。
-## 注2：该运行方式不适合生产，实体书里也并未提及，仅作拓展阅读。
+## 注2：该方式一般不适合生产，实体书里也并未提及，仅作拓展阅读。
