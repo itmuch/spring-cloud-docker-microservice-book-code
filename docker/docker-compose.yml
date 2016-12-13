@@ -1,35 +1,22 @@
 version: '2'
 services:
-  microservice-discovery-eureka:
+  microservice-discovery-eureka-ha1:
     image: itmuch/microservice-discovery-eureka:0.0.1-SNAPSHOT
-    network_mode: host
+    hostname: peer1
     ports:
     - 8761:8761
+  microservice-discovery-eureka-ha2:
+    image: itmuch/microservice-discovery-eureka:0.0.1-SNAPSHOT
+    hostname: peer2
+    ports:
+    - 8762:8762
   microservice-provider-user:
     image: itmuch/microservice-provider-user:0.0.1-SNAPSHOT
-    network_mode: host
-    ports:
-    - 8000:8000
   microservice-consumer-movie-ribbon-hystrix:
     image: itmuch/microservice-consumer-movie-ribbon-hystrix:0.0.1-SNAPSHOT
-    network_mode: host
-    ports:
-    - 8010:8010
   microservice-hystrix-dashboard:
     image: itmuch/microservice-hystrix-dashboard:0.0.1-SNAPSHOT
-    network_mode: host
-    ports:
-    - 8030:8030
   microservice-hystrix-turbine:
     image: itmuch/microservice-hystrix-turbine:0.0.1-SNAPSHOT
-    network_mode: host
-    ports:
-    - 8031:8031
   microservice-gateway:
     image: itmuch/microservice-gateway-zuul:0.0.1-SNAPSHOT
-    network_mode: host
-    ports:
-    - 8040:8040
-
-## 注1：本Compose文件使用的网络模式是host，使用这种模式，可以让所有的微服务都无需修改eureka.client.serviceUrl.defautlZone的配置，而直接使用http://localhost:8761/eureka/。
-## 注2：该运行方式不适合生产，实体书里也并未提及，仅作拓展阅读。

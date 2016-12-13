@@ -9,7 +9,7 @@
 
   <modules>
     <module>microservice-consumer-movie-ribbon-hystrix</module>
-	<module>microservice-discovery-eureka</module>
+	<module>microservice-discovery-eureka-ha</module>
 	<module>microservice-gateway-zuul</module>
 	<module>microservice-hystrix-dashboard</module>
 	<module>microservice-hystrix-turbine</module>

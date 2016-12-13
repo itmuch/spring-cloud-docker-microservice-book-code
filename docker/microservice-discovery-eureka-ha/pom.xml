@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itmuch.cloud</groupId>
-  <artifactId>microservice-discovery-eureka</artifactId>
+  <artifactId>microservice-discovery-eureka-ha</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -39,32 +39,12 @@
     </dependencies>
   </dependencyManagement>
 
-
+  <!-- 添加spring-boot的maven插件 -->
   <build>
     <plugins>
-      <!-- 添加spring-boot的maven插件 -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-
-      <!-- 添加docker-maven插件 -->
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>0.4.13</version>
-        <configuration>
-          <imageName>itmuch/microservice-discovery-eureka:0.0.1</imageName>
-          <baseImage>java</baseImage>
-          <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-          <resources>
-            <resource>
-              <targetPath>/</targetPath>
-              <directory>${project.build.directory}</directory>
-              <include>${project.build.finalName}.jar</include>
-            </resource>
-          </resources>
-        </configuration>
       </plugin>
     </plugins>
   </build>
