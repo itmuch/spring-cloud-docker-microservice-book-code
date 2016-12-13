@@ -10,7 +10,7 @@ microservice-provider-user:
   links:
   - microservice-discovery-eureka
 microservice-consumer-movie-ribbon-hystrix:
-  image: itmuch/microservice-consumer-movie-ribbon-with-hystrix
+  image: itmuch/microservice-consumer-movie-ribbon-hystrix
   ports:
   - "8010:8010"
   links:
@@ -28,11 +28,11 @@ microservice-hystrix-turbine:
   - "8031:8031"
   links:
   - microservice-discovery-eureka
-  - microservice-consumer-movie-ribbon-with-hystrix
+  - microservice-consumer-movie-ribbon-hystrix
 microservice-api-gateway:
   image: itmuch/microservice-api-gateway
   ports:
   - "8040:8040"
   links:
   - microservice-discovery-eureka
-  - microservice-consumer-movie-ribbon-with-hystrix
+  - microservice-consumer-movie-ribbon-hystrix
