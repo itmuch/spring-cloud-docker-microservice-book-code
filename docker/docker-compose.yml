@@ -1,44 +1,45 @@
-microservice-discovery-eureka:
-  image: itmuch/microservice-discovery-eureka
-  ports:
-  - "8761:8761"
-  network_mode: "host"
-microservice-provider-user:
-  image: itmuch/microservice-provider-user
-  ports:
-  - "8000:8000"
-  network_mode: "host"
-  links:
-  - microservice-discovery-eureka
-microservice-consumer-movie-ribbon-hystrix:
-  image: itmuch/microservice-consumer-movie-ribbon-with-hystrix
-  ports:
-  - "8010:8010"
-  network_mode: "host"
-  links:
-  - microservice-discovery-eureka
-microservice-hystrix-dashboard:
-  image: itmuch/microservice-hystrix-dashboard
-  ports:
-  - "8030:8030"
-  network_mode: "host"
-  links:
-  - microservice-discovery-eureka
-  - microservice-hystrix-turbine
-microservice-hystrix-turbine:
-  image: itmuch/microservice-hystrix-turbine
-  ports:
-  - "8031:8031"
-  network_mode: "host"
-  links:
-  - microservice-discovery-eureka
-  - microservice-consumer-movie-ribbon-with-hystrix
-microservice-api-gateway:
-  image: itmuch/microservice-api-gateway
-  ports:
-  - "8040:8040"
-  network_mode: "host"
-  links:
-  - microservice-discovery-eureka
-  - microservice-consumer-movie-ribbon-with-hystrix
+services: 
+  microservice-discovery-eureka:
+    image: itmuch/microservice-discovery-eureka
+    ports:
+    - "8761:8761"
+    network_mode: "host"
+  microservice-provider-user:
+    image: itmuch/microservice-provider-user
+    ports:
+    - "8000:8000"
+    network_mode: "host"
+    links:
+    - microservice-discovery-eureka
+  microservice-consumer-movie-ribbon-hystrix:
+    image: itmuch/microservice-consumer-movie-ribbon-with-hystrix
+    ports:
+    - "8010:8010"
+    network_mode: "host"
+    links:
+    - microservice-discovery-eureka
+  microservice-hystrix-dashboard:
+    image: itmuch/microservice-hystrix-dashboard
+    ports:
+    - "8030:8030"
+    network_mode: "host"
+    links:
+    - microservice-discovery-eureka
+    - microservice-hystrix-turbine
+  microservice-hystrix-turbine:
+    image: itmuch/microservice-hystrix-turbine
+    ports:
+    - "8031:8031"
+    network_mode: "host"
+    links:
+    - microservice-discovery-eureka
+    - microservice-consumer-movie-ribbon-with-hystrix
+  microservice-api-gateway:
+    image: itmuch/microservice-api-gateway
+    ports:
+    - "8040:8040"
+    network_mode: "host"
+    links:
+    - microservice-discovery-eureka
+    - microservice-consumer-movie-ribbon-with-hystrix
 
