@@ -70,7 +70,7 @@
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.4.13</version>
         <configuration>
-          <imageName>itmuch/${pproject.artifactId}:${project.version}</imageName>
+          <imageName>itmuch/${project.artifactId}:${project.version}</imageName>
           <baseImage>java</baseImage>
           <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
           <resources>
