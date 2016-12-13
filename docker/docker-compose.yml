@@ -12,14 +12,14 @@ services:
     links:
     - microservice-discovery-eureka
   microservice-consumer-movie-ribbon-hystrix:
-    image: itmuch/microservice-consumer-movie-ribbon-with-hystrix
+    image: itmuch/microservice-consumer-movie-ribbon-with-hystrix:0.0.1-SNAPSHOT
     ports:
     - "8010:8010"
     network_mode: "host"
     links:
     - microservice-discovery-eureka
   microservice-hystrix-dashboard:
-    image: itmuch/microservice-hystrix-dashboard
+    image: itmuch/microservice-hystrix-dashboard:0.0.1-SNAPSHOT
     ports:
     - "8030:8030"
     network_mode: "host"
@@ -27,7 +27,7 @@ services:
     - microservice-discovery-eureka
     - microservice-hystrix-turbine
   microservice-hystrix-turbine:
-    image: itmuch/microservice-hystrix-turbine
+    image: itmuch/microservice-hystrix-turbine:0.0.1-SNAPSHOT
     ports:
     - "8031:8031"
     network_mode: "host"
@@ -35,11 +35,11 @@ services:
     - microservice-discovery-eureka
     - microservice-consumer-movie-ribbon-with-hystrix
   microservice-api-gateway:
-    image: itmuch/microservice-api-gateway
+    image: itmuch/microservice-api-gateway:0.0.1-SNAPSHOT
     ports:
     - "8040:8040"
     network_mode: "host"
     links:
     - microservice-discovery-eureka
-    - microservice-consumer-movie-ribbon-with-hystrix
+    - microservice-consumer-movie-ribbon-with-hystrix:0.0.1-SNAPSHOT
 
