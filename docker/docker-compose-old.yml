@@ -2,6 +2,7 @@ microservice-discovery-eureka:
   image: itmuch/microservice-discovery-eureka
   ports:
   - "8761:8761"
+  hostname: discovery
 microservice-provider-user:
   image: itmuch/microservice-provider-user
   ports:
@@ -35,5 +36,3 @@ microservice-api-gateway:
   links:
   - microservice-discovery-eureka
   - microservice-consumer-movie-ribbon-with-hystrix
-network_mode: "host"
-network_mode: "host"
