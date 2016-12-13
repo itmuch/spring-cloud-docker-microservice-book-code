@@ -5,7 +5,7 @@
   <groupId>com.itmuch.cloud</groupId>
   <artifactId>parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <modules>
     <module>microservice-consumer-movie-ribbon-hystrix</module>
