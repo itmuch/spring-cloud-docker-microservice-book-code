@@ -1,11 +1,11 @@
 services: 
   microservice-discovery-eureka:
-    image: itmuch/microservice-discovery-eureka
+    image: itmuch/microservice-discovery-eureka:0.0.1-SNAPSHOT
     ports:
     - "8761:8761"
     network_mode: "host"
   microservice-provider-user:
-    image: itmuch/microservice-provider-user
+    image: itmuch/microservice-provider-user:0.0.1-SNAPSHOT
     ports:
     - "8000:8000"
     network_mode: "host"
