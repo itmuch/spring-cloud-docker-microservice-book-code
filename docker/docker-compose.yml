@@ -36,4 +36,3 @@ microservice-api-gateway:
   - microservice-discovery-eureka
   - microservice-consumer-movie-ribbon-with-hystrix
 network_mode: "host"
-network_mode: "host"
