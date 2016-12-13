@@ -1,0 +1,38 @@
+microservice-discovery-eureka:
+  image: itmuch/microservice-discovery-eureka
+  ports:
+  - "8761:8761"
+  hostname: discovery
+microservice-provider-user:
+  image: itmuch/microservice-provider-user
+  ports:
+  - "8000:8000"
+  links:
+  - microservice-discovery-eureka
+microservice-consumer-movie-ribbon-hystrix:
+  image: itmuch/microservice-consumer-movie-ribbon-with-hystrix
+  ports:
+  - "8010:8010"
+  links:
+  - microservice-discovery-eureka
+microservice-hystrix-dashboard:
+  image: itmuch/microservice-hystrix-dashboard
+  ports:
+  - "8030:8030"
+  links:
+  - microservice-discovery-eureka
+  - microservice-hystrix-turbine
+microservice-hystrix-turbine:
+  image: itmuch/microservice-hystrix-turbine
+  ports:
+  - "8031:8031"
+  links:
+  - microservice-discovery-eureka
+  - microservice-consumer-movie-ribbon-with-hystrix
+microservice-api-gateway:
+  image: itmuch/microservice-api-gateway
+  ports:
+  - "8040:8040"
+  links:
+  - microservice-discovery-eureka
+  - microservice-consumer-movie-ribbon-with-hystrix
