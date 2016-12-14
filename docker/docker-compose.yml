@@ -20,4 +20,4 @@ services:
       - spring.profiles.active=peer2
 networks:
   eureka-net:
-    driver: bridge
+    driver: overlay
