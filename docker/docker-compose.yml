@@ -3,7 +3,8 @@ services:
   microservice-discovery-eureka-ha1:
     hostname: peer1
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
-    networks: eureka-net
+    networks: 
+      - eureka-net
     links:
       - microservice-discovery-eureka-ha2
     ports:
@@ -13,7 +14,8 @@ services:
   microservice-discovery-eureka-ha2:
     hostname: peer2
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
-    networks: eureka-net
+    networks: 
+      - eureka-net
     links:
       - microservice-discovery-eureka-ha2
     ports:
