@@ -3,7 +3,6 @@ services:
   microservice-discovery-eureka-ha1:
     hostname: peer1
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
-    networks: eureka-net
     links:
       - microservice-discovery-eureka-ha2
     ports:
@@ -13,13 +12,11 @@ services:
   microservice-discovery-eureka-ha2:
     hostname: peer2
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
-    networks: eureka-net
     links:
       - microservice-discovery-eureka-ha2
     ports:
       - "8762:8762"
     environment:
       - spring.profiles.active=peer2
-networks:
-  eureka-net:
-    driver: bridge
+      
+## 本例是最自然的玩法，但是是无法正常使用的，运行docker-compose up时，会报循环依赖的异常。
