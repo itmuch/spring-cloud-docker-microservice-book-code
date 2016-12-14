@@ -1,10 +1,10 @@
 version: "2"
-ambassador:
-  image: svendowideit/ambassador
-  volumes:
-    - "/var/run/docker.sock:/var/run/docker.sock"
-  command: "-name peer1 -name peer2"
 services:
+  ambassador:
+    image: svendowideit/ambassador
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: "-name peer1 -name peer2"
   microservice-discovery-eureka-ha1:
     hostname: peer1
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
