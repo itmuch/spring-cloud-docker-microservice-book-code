@@ -1,7 +1,7 @@
-version: "2"
+version: "2"            # 表示使用docker-compose.yml的Version 2 file format编写
 services:
   microservice-discovery-eureka-ha1:
-    hostname: peer1
+    hostname: peer1             # 指定hostname
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
     links:
       - microservice-discovery-eureka-ha2
@@ -13,7 +13,7 @@ services:
     hostname: peer2
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
     links:
-      - microservice-discovery-eureka-ha2
+      - microservice-discovery-eureka-ha1
     ports:
       - "8762:8762"
     environment:

@@ -17,7 +17,7 @@ services:
     networks: 
       - eureka-net
     links:
-      - microservice-discovery-eureka-ha2
+      - microservice-discovery-eureka-ha1
     ports:
       - "8762:8762"
     environment:
