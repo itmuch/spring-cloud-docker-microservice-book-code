@@ -5,8 +5,6 @@ services:
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
     networks: 
       - eureka-net
-    links:
-      - microservice-discovery-eureka-ha2
     ports:
       - "8761:8761"
     environment:
@@ -16,8 +14,6 @@ services:
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
     networks: 
       - eureka-net
-    links:
-      - microservice-discovery-eureka-ha1
     ports:
       - "8762:8762"
     environment:
