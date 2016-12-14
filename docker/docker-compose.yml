@@ -1,0 +1,16 @@
+version: "2"
+services:
+  microservice-discovery-eureka-ha1:
+    hostname: peer1
+    image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+    environment:
+      - spring.profiles.active=peer1
+  microservice-discovery-eureka-ha2:
+    hostname: peer2
+    image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
+    ports:
+      - "8762:8762"
+    environment:
+      - spring.profiles.active=peer2
