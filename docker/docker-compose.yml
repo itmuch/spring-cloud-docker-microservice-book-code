@@ -1,10 +1,15 @@
 version: "2"
+ambassador:
+  image: svendowideit/ambassador
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+  command: "-name peer1 -name peer2"
 services:
   microservice-discovery-eureka-ha1:
     hostname: peer1
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
-    networks: 
-      - eureka-net
+    links: 
+      - "ambassador:peer2"
     ports:
       - "8761:8761"
     environment:
@@ -12,8 +17,8 @@ services:
   microservice-discovery-eureka-ha2:
     hostname: peer2
     image: itmuch/microservice-discovery-eureka-ha:0.0.1-SNAPSHOT
-    networks: 
-      - eureka-net
+    links:
+    - "ambassador:peer1"
     ports:
       - "8762:8762"
     environment:
