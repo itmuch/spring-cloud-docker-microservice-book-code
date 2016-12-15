@@ -1,27 +1,26 @@
-version: '2'
-services:
-  microservice-discovery-eureka:
-    image: itmuch/microservice-discovery-eureka:0.0.1-SNAPSHOT
-    hostname: discovery
-    ports:
-      - 8761:8761
+version: '2'        # 表示该docker-compose.yml文件使用的是Version 2 file format
+services:           # Version 2 file format的固定写法，为project定义服务。
+  microservice-discovery-eureka:                                  # 指定服务名称
+    image: itmuch/microservice-discovery-eureka:0.0.1-SNAPSHOT    # 指定服务所使用的镜像
+    ports:                                                        # 暴露端口信息
+      - "8761:8761"
   microservice-provider-user:
     image: itmuch/microservice-provider-user:0.0.1-SNAPSHOT
-    links: 
-      - microservice-discovery-eureka
+    links:          # 链接到microservice-discovery-eureka，这边使用的是SERVICE:ALIAS的形式
+      - microservice-discovery-eureka:discovery
   microservice-consumer-movie-ribbon-hystrix:
     image: itmuch/microservice-consumer-movie-ribbon-hystrix:0.0.1-SNAPSHOT
     links: 
-      - microservice-discovery-eureka
+      - microservice-discovery-eureka:discovery
   microservice-gateway:
     image: itmuch/microservice-gateway-zuul:0.0.1-SNAPSHOT
     links: 
-      - microservice-discovery-eureka
+      - microservice-discovery-eureka:discovery
   microservice-hystrix-dashboard:
     image: itmuch/microservice-hystrix-dashboard:0.0.1-SNAPSHOT
     links: 
-      - microservice-discovery-eureka
+      - microservice-discovery-eureka:discovery
   microservice-hystrix-turbine:
     image: itmuch/microservice-hystrix-turbine:0.0.1-SNAPSHOT
     links: 
-      - microservice-discovery-eureka
+      - microservice-discovery-eureka:discovery
