@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 public class UserFallbackProvider implements ZuulFallbackProvider {
   @Override
   public String getRoute() {
-    // 返回一个路由id，表明是为哪个路由提供回退
-    return "microservice-provider-user";
+    // 返回一个微服务的名称，表明是为哪个微服务提供回退
+    return "user";
   }
 
   @Override
