@@ -16,7 +16,7 @@ zuul:
       service-id: microservice-provider-user
 ribbon:
   eureka:
-    enabled: false    # 禁用掉ribbon的eureka使用。详见：http://cloud.spring.io/spring-cloud-static/Camden.SR2/#_example_disable_eureka_use_in_ribbon
+    enabled: false    # 禁用掉ribbon的eureka使用。详见：http://cloud.spring.io/spring-cloud-static/Camden.SR3/#_example_disable_eureka_use_in_ribbon
 microservice-provider-user:
   ribbon:
     listOfServers: localhost:8000,localhost:8001
