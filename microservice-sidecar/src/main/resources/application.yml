@@ -10,5 +10,5 @@ eureka:
   instance:
     prefer-ip-address: true
 sidecar:
-  port: 8060                                      # NodeJS微服务的端口
-  health-uri: http://localhost:8060/health.json   # NodeJS微服务的健康检查URL
+  port: 8060                                      # Node.js微服务的端口
+  health-uri: http://localhost:8060/health.json   # Node.js微服务的健康检查URL
