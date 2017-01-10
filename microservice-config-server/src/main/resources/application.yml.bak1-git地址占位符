@@ -8,8 +8,8 @@ spring:
       server:
         git:
           uri: https://git.oschina.net/itmuch/{application}
-          username:                                                         # git仓库的账号
-          password:                                                         # git仓库的密码
+          username:                                                         # Git仓库的账号
+          password:                                                         # Git仓库的密码
 logging:
   level:
     org.springframework.cloud: DEBUG
