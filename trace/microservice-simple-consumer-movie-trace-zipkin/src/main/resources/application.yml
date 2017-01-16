@@ -1,0 +1,18 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+
+
+#logging:
+ # level:
+  #  org.springframework.cloud.sleuth: DEBUG
+  #pattern:
+   # level: "%clr(%5p) %clr([${spring.application.name:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-B3-ParentSpanId:-},%X{X-Span-Export:-}]){yellow}"
+  zipkin:
+    base-url: http://localhost:9411
+    enabled: true
+  sleuth:
+    sampler:
+      percentage: 1.0
