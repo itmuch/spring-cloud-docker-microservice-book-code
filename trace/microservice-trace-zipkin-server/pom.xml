@@ -25,9 +25,9 @@
       <artifactId>zipkin-autoconfigure-ui</artifactId>
     </dependency>
     <dependency>
-				<groupId>io.zipkin.java</groupId>
-				<artifactId>zipkin-server</artifactId>
-			</dependency>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-server</artifactId>
+    </dependency>
   </dependencies>
 
   <!-- 引入spring cloud的依赖 -->
