@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservice-provider-user
+
+# 注意：本例中的spring.application.name只能放在bootstrap.*文件中，不能放在application.*文件中，因为我们使用了自定义的logback-spring.xml。
+# 如果放在application.*文件中，自定义的logback文件将无法正确读取属性。
+# 详见：http://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/1.1.1.RELEASE/#_adding_to_the_project 上方的NOTE，内容如下：
+# If you’re using a custom logback-spring.xml then you have to pass the spring.application.name in bootstrap instead of application property file. Otherwise your custom logback file won’t read the property properly.
