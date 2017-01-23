@@ -48,7 +48,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Camden.SR3</version>
+        <version>Camden.SR4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
