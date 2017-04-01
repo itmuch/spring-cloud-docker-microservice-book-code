@@ -1,15 +1,16 @@
 package com.itmuch.cloud.study.fallback;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
 
 @Component
 public class UserFallbackProvider implements ZuulFallbackProvider {
@@ -54,7 +55,9 @@ public class UserFallbackProvider implements ZuulFallbackProvider {
       public HttpHeaders getHeaders() {
         // headers设定
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
+        MediaType mt = new MediaType("application","json", Charset.forName("UTF-8"));
+        headers.setContentType(mt);
+
         return headers;
       }
     };
