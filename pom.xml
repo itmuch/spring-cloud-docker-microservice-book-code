@@ -34,6 +34,7 @@
     <module>microservice-consumer-movie-feign-multiple-params</module>
     <module>microservice-consumer-movie-ribbon</module>
     <module>microservice-consumer-movie-ribbon-hystrix</module>
+    <module>microservice-consumer-movie-ribbon-hystrix-turbine-mq</module>
     <module>microservice-consumer-movie-understanding-metadata</module>
     <module>microservice-consumer-movie-without-eureka</module>
     <module>microservice-discovery-eureka</module>
@@ -41,6 +42,7 @@
     <module>microservice-discovery-eureka-ha</module>
     <module>microservice-file-upload</module>
     <module>microservice-gateway-zuul</module>
+    <module>microservice-gateway-zuul-aggregation</module>
     <module>microservice-gateway-zuul-fallback</module>
     <module>microservice-gateway-zuul-file-upload</module>
     <module>microservice-gateway-zuul-filter</module>

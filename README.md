@@ -3,7 +3,7 @@
 * 本Repo是《Spring Cloud与Docker微服务架构实战 - 周立》的配套代码
 * 本书已纳入 [Spring Cloud中国社区](http://springcloud.cn) 书籍系列
 * 包含62个DEMO
-* 覆盖的项目有Eureka、Ribbon、Feign、Hystrix、Zuul、Spring Cloud Config、Spring Cloud Bus、Spring Cloud Sleuth等
+* 覆盖的项目有Eureka、Ribbon、Feign、Hystrix、Zuul、Spring Cloud Config、Spring Cloud Bus、Spring Cloud Sleuth等，**其中，Sleuth配套代码详见trace目录。其他代码都在根目录**
 * 12-14章配套代码详见：<http://git.oschina.net/itmuch/spring-cloud-docker-microservice-book-code-docker>
 
 
