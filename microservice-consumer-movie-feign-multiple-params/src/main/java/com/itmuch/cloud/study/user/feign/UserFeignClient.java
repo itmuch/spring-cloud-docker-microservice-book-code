@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@FeignClient(name = "microservice-provider-user",configuration = XXX.class)
+@FeignClient(name = "microservice-provider-user")
 public interface UserFeignClient {
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public User findById(@PathVariable("id") Long id);
