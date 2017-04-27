@@ -1,0 +1,17 @@
+<instance>
+    <instanceId>itmuch:rest-api-test:9000</instanceId>
+    <hostName>itmuch</hostName>
+    <app>REST-API-TEST</app>
+    <ipAddr>127.0.0.1</ipAddr>
+    <vipAddress>rest-api-test</vipAddress>
+    <secureVipAddress>rest-api-test</secureVipAddress>
+    <status>UP</status>
+    <port enabled="true">9000</port>
+    <securePort enabled="false">443</securePort>
+    <homePageUrl>http://127.0.0.1:9000/</homePageUrl>
+    <statusPageUrl>http://127.0.0.1:9000/info</statusPageUrl>
+    <healthCheckUrl>http://127.0.0.1:9000/health</healthCheckUrl>
+    <dataCenterInfo class="com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo">
+        <name>MyOwn</name>
+    </dataCenterInfo>
+</instance>
