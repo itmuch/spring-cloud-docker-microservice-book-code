@@ -22,7 +22,7 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-turbine</artifactId>
+      <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
     </dependency>
   </dependencies>
 
