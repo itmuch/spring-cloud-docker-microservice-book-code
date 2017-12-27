@@ -17,5 +17,9 @@ zuul:
 logging:
   level:
     com.netflix: DEBUG
-    
-# 访问Zuul的/api/microservice-provider-user/1路径，请求将会被转发到microservice-provider-user的/api/1，，可以查看日志打印，有助于理解。
+management:
+  security:
+    enabled: false
+
+# 访问Zuul的/api/microservice-provider-user/1路径，请求将会被转发到microservice-provider-user的/api/1，可查看日志打印，有助于理解。
+

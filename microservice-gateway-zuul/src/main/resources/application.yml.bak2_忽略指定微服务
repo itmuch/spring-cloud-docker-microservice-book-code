@@ -11,3 +11,6 @@ eureka:
     prefer-ip-address: true
 zuul:
   ignored-services: microservice-provider-user,microservice-consumer-movie
+management:
+  security:
+    enabled: false

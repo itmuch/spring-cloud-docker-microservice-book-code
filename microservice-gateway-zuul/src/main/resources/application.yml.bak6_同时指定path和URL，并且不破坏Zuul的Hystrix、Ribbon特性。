@@ -20,3 +20,6 @@ ribbon:
 microservice-provider-user:
   ribbon:
     listOfServers: localhost:8000,localhost:8001
+management:
+  security:
+    enabled: false
