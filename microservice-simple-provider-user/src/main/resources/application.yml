@@ -25,3 +25,8 @@ info:
     java:
       source: @java.version@
       target: @java.version@
+management:
+  security:
+    enabled: false
+
+
