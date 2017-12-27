@@ -13,6 +13,10 @@ logging:
   level:
     feign: DEBUG
 
-# 说明：请务必注意，在Spring Cloud Dalston中，Feign默认是不开启Hystrix的。
+
+feign:
+  hystrix:
+    enabled: true
+# 说明：请务必注意，从Spring Cloud Dalston开始，Feign默认是不开启Hystrix的。
 # 因此，如使用Dalston请务必额外设置属性：feign.hystrix.enabled=true，否则断路器不会生效。
 # 而，Spring Cloud Angel/Brixton/Camden中，Feign默认都是开启Hystrix的。无需设置该属性。
