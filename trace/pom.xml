@@ -18,5 +18,8 @@
     <module>microservice-trace-zipkin-server</module>
     <module>microservice-trace-zipkin-server-stream</module>
     <module>microservice-trace-zipkin-server-stream-elasticsearch</module>
+    <module>microservice-trace-zipkin-server-eureka</module>
+    <module>microservice-discovery-eureka</module>
+    <module>microservice-provider-user-zipkin</module>
   </modules>
 </project>
