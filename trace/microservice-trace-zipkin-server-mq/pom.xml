@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itmuch.cloud</groupId>
-  <artifactId>microservice-trace-zipkin-server-stream</artifactId>
+  <artifactId>microservice-trace-zipkin-server-mq</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -21,20 +21,19 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-sleuth</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-autoconfigure-ui</artifactId>
     </dependency>
     <dependency>
       <groupId>io.zipkin.java</groupId>
-      <artifactId>zipkin-autoconfigure-ui</artifactId>
+      <artifactId>zipkin-server</artifactId>
+    </dependency>
+
+    <!-- 使用消息的方式收集数据（使用rabbitmq） -->
+    <dependency>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-autoconfigure-collector-rabbitmq</artifactId>
+      <version>2.3.1</version>
     </dependency>
   </dependencies>
 

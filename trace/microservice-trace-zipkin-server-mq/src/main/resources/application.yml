@@ -1,0 +1,9 @@
+server:
+  port: 9488
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: localhost:5672
+      password: guest
+      username: guest
+      queue: zipkin

@@ -14,9 +14,9 @@
     <module>microservice-simple-provider-user-trace</module>
     <module>microservice-simple-provider-user-trace-elk</module>
     <module>microservice-simple-provider-user-trace-zipkin</module>
-    <module>microservice-simple-provider-user-trace-zipkin-stream</module>
+    <module>microservice-simple-provider-user-trace-zipkin-mq</module>
     <module>microservice-trace-zipkin-server</module>
-    <module>microservice-trace-zipkin-server-stream</module>
+    <module>microservice-trace-zipkin-server-mq</module>
     <module>microservice-trace-zipkin-server-stream-elasticsearch</module>
     <module>microservice-trace-zipkin-server-eureka</module>
     <module>microservice-discovery-eureka</module>
