@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.itmuch.cloud</groupId>
-  <artifactId>microservice-simple-provider-user-trace-zipkin-mq</artifactId>
+  <artifactId>microservice-simple-provider-user-trace-zipkin-stream</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
