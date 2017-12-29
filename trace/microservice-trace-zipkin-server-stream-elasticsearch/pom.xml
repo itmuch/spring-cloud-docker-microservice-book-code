@@ -21,21 +21,25 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.zipkin.java</groupId>
       <artifactId>zipkin-autoconfigure-ui</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-server</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>io.zipkin.java</groupId>
+      <artifactId>zipkin-autoconfigure-collector-rabbitmq</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+
+    <!-- 支持Elasticsearch 2.x - 6.x -->
     <dependency>
       <groupId>io.zipkin.java</groupId>
       <artifactId>zipkin-autoconfigure-storage-elasticsearch-http</artifactId>
-      <version>1.16.2</version>
+      <version>2.3.1</version>
     </dependency>
   </dependencies>
 
