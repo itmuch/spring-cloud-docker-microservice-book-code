@@ -24,7 +24,7 @@
 
 ## 交流
 
-* QQ群：157525002（2000人群，已满）、**564840207（2000人群，欢迎加入）**
+* QQ群：731548893，欢迎加入
 * 个人博客：[http://www.itmuch.com](http://www.itmuch.com)
 * Spring For All 社区：<http://www.spring4all.com>
 * 微信公众号：往下翻 ^_^
