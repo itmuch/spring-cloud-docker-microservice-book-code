@@ -1,0 +1,19 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    route-name:
+      path: /path-a/**
+      url: forward:/path-b
+management:
+  security:
+    enabled: false

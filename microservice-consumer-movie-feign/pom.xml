@@ -11,7 +11,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.3.RELEASE</version>
+    <version>1.5.9.RELEASE</version>
   </parent>
 
   <properties>
@@ -31,12 +31,12 @@
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-eureka</artifactId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-feign</artifactId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
   </dependencies>
 
@@ -46,7 +46,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Camden.SR4</version>
+        <version>Edgware.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

@@ -5,14 +5,19 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-@Component
+/**
+ * Edgware版本之前的写法，在Edgware版本已经废弃。仅供参考。
+ *
+ * @see MyFallbackProvider
+ */
+@Deprecated
+//@Component
 public class UserFallbackProvider implements ZuulFallbackProvider {
   @Override
   public String getRoute() {
@@ -55,7 +60,7 @@ public class UserFallbackProvider implements ZuulFallbackProvider {
       public HttpHeaders getHeaders() {
         // headers设定
         HttpHeaders headers = new HttpHeaders();
-        MediaType mt = new MediaType("application","json", Charset.forName("UTF-8"));
+        MediaType mt = new MediaType("application", "json", Charset.forName("UTF-8"));
         headers.setContentType(mt);
 
         return headers;

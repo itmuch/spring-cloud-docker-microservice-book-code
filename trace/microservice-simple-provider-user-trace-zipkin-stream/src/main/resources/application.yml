@@ -20,3 +20,6 @@ spring:
     port: 5672
     username: guest
     password: guest
+  zipkin:
+    rabbitmq:
+      queue: zipkin

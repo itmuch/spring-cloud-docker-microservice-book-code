@@ -1,8 +1,9 @@
 server:
   port: 9411
-spring:  
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: localhost:5672
+      password: guest
+      username: guest
+      queue: zipkin

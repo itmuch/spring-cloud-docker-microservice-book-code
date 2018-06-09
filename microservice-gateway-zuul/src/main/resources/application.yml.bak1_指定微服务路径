@@ -12,3 +12,6 @@ eureka:
 zuul:
   routes:
     microservice-provider-user: /user/**
+management:
+  security:
+    enabled: false
