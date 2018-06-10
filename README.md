@@ -1,6 +1,6 @@
 # 《Spring Cloud与Docker微服务架构实战 第二版》1-11章配套代码
 
-* 本仓库是《Spring Cloud与Docker微服务架构实战 **第二版**》的配套代码，第一版的配套源码请看Camden分支。
+* 本仓库是《Spring Cloud与Docker微服务架构实战 **第二版**》的配套代码，第一版的配套源码详见Camden分支。
 * 包含60+个DEMO
 * 覆盖了
   * Eureka
@@ -20,7 +20,10 @@
 * QQ群：731548893，欢迎加入
 * 个人博客：[http://www.itmuch.com](http://www.itmuch.com)
 * Spring For All 社区：<http://www.spring4all.com>
-* 微信：![](wx.jpg)
+* 微信：![微信公众号](wx.jpg)
 
+**持续更新Spring Cloud、Docker相关知识**，敬请关注！！
 
-**敬请关注！！**
+**持续更新Spring Cloud、Docker相关知识**，敬请关注！！
+
+**持续更新Spring Cloud、Docker相关知识**，敬请关注！！
