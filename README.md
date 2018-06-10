@@ -7,40 +7,15 @@
 
 
 
-
-
-
-## 购书链接
-
-* 京东购书链接
-
-  ![](ad/jd-购书链接.png)
-
-
-
-
-
-
-
 ## 交流
 
 * QQ群：731548893，欢迎加入
 * 个人博客：[http://www.itmuch.com](http://www.itmuch.com)
-* Spring For All 社区：<http://www.spring4all.com>
-* 微信公众号：往下翻 ^_^
+* 微信：![](wx.jpg)
 
+**持续更新Spring Cloud、Docker相关知识**，敬请关注！！
 
-**敬请关注！！**
+**持续更新Spring Cloud、Docker相关知识**，敬请关注！！
 
+**持续更新Spring Cloud、Docker相关知识**，敬请关注！！
 
-
-
-
-
-## 目录
-
-* Word版本：[目录下载](ad/catalog.doc)
-
-* 图片版本
-
-![](ad/catalog.png)
