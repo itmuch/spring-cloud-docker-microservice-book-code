@@ -1,0 +1,6 @@
+encrypt:
+  keyStore:
+    location: classpath:/server.jks # jks文件的路径
+    password: letmein               # storepass
+    alias: mytestkey                # alias
+    secret: changeme                # keypass
