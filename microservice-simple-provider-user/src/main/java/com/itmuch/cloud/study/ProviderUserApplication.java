@@ -15,11 +15,12 @@ public class ProviderUserApplication {
   public static void main(String[] args) {
     SpringApplication.run(ProviderUserApplication.class, args);
   }
+
   /**
    * 初始化用户信息
-   * # 注：这里不能像1.x一样，用spring.datasource.schema/data指定初始化SQL脚本
-   * # 原因：https://github.com/spring-projects/spring-boot/issues/13042
-   * # https://github.com/spring-projects/spring-boot/issues/13539
+   * 注：Spring Boot2不能像1.x一样，用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
+   * 原因：https://github.com/spring-projects/spring-boot/issues/13042
+   * https://github.com/spring-projects/spring-boot/issues/13539
    *
    * @param repository repo
    * @return runner

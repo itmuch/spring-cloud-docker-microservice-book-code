@@ -1,8 +1,6 @@
 server:
   port: 8000
 spring:
-  application:
-    name: microservice-provider-user
   jpa:
     generate-ddl: false
     show-sql: true
@@ -18,12 +16,14 @@ logging:                                # 配置日志级别，让hibernate打�
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
+## INFO
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
 management:
   endpoints:
     web:
@@ -34,6 +34,6 @@ management:
       show-details: always
 
 
-# 注：这里不能用spring.datasource.schema/data指定初始化SQL脚本
+# 注：Spring Boot2不能用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
 # 原因：https://github.com/spring-projects/spring-boot/issues/13042
 # https://github.com/spring-projects/spring-boot/issues/13539
