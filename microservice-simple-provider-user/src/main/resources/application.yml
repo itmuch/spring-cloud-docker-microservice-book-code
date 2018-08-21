@@ -1,32 +1,39 @@
 server:
   port: 8000
 spring:
+  application:
+    name: microservice-provider-user
   jpa:
     generate-ddl: false
     show-sql: true
     hibernate:
-      ddl-auto: none
-  datasource:                           # 指定数据源
-    platform: h2                        # 指定数据源类型
-    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
-    data: classpath:data.sql            # 指定h2数据库的数据脚本
+      ddl-auto: create-drop
+  # datasource:                           # 指定数据源
+    # platform: h2                        # 指定数据源类型
+#    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
+#    data: classpath:data.sql            # 指定h2数据库的数据脚本
 logging:                                # 配置日志级别，让hibernate打印出执行的SQL
   level:
     root: INFO
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    
-## INFO
-info: 
-  app: 
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 
 
+# 注：这里不能用spring.datasource.schema/data指定初始化SQL脚本
+# 原因：https://github.com/spring-projects/spring-boot/issues/13042
+# https://github.com/spring-projects/spring-boot/issues/13539
