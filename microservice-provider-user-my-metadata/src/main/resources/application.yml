@@ -23,7 +23,6 @@ eureka:
     metadata-map:
       my-metadata: 我自定义的元数据       # 自定义的元数据，key/value都可以随便写。
 
-
 # 注：Spring Boot2不能用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
 # 原因：https://github.com/spring-projects/spring-boot/issues/13042
 # https://github.com/spring-projects/spring-boot/issues/13539
