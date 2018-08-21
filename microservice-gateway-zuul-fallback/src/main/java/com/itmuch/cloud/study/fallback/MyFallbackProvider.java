@@ -22,7 +22,7 @@ public class MyFallbackProvider implements FallbackProvider {
   }
 
   @Override
-  public ClientHttpResponse fallbackResponse(Throwable cause) {
+  public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
     if (cause instanceof HystrixTimeoutException) {
       return response(HttpStatus.GATEWAY_TIMEOUT);
     } else {
@@ -30,7 +30,6 @@ public class MyFallbackProvider implements FallbackProvider {
     }
   }
 
-  @Override
   public ClientHttpResponse fallbackResponse() {
     return this.response(HttpStatus.INTERNAL_SERVER_ERROR);
   }

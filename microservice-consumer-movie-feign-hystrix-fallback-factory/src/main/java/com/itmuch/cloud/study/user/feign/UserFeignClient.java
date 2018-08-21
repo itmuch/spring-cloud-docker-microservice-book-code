@@ -1,16 +1,14 @@
 package com.itmuch.cloud.study.user.feign;
 
+import com.itmuch.cloud.study.user.entity.User;
+import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.itmuch.cloud.study.user.entity.User;
-
-import feign.hystrix.FallbackFactory;
 
 @FeignClient(name = "microservice-provider-user", fallbackFactory = FeignClientFallbackFactory.class)
 public interface UserFeignClient {
