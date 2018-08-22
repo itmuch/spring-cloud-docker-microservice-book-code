@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: microservice-config-server
+  security:
+    user:
+      name: user                # 配置登录的账号是user
+      password: password123     # 配置登录的密码是password123
   cloud:
     config:
       server:
@@ -10,9 +14,3 @@ spring:
           uri: https://git.oschina.net/itmuch/spring-cloud-config-repo      # 配置Git仓库的地址
           username:                                                         # Git仓库的账号
           password:                                                         # Git仓库的密码
-security:
-  basic:
-    enabled: true               # 开启基于HTTP basic的认证
-  user:
-    name: user                  # 配置登录的账号是user
-    password: password123       # 配置登录的密码是password123
