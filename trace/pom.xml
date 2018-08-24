@@ -15,6 +15,7 @@
     <module>microservice-simple-provider-user-trace-elk</module>
     <module>microservice-simple-provider-user-trace-zipkin</module>
     <module>microservice-simple-provider-user-trace-zipkin-stream</module>
+    <module>additional-microservice-simple-provider-user-trace-zipkin-stream-kafka</module>
     <!--<module>microservice-trace-zipkin-server</module>-->
     <!--<module>microservice-trace-zipkin-server-stream</module>-->
     <!--<module>microservice-trace-zipkin-server-stream-elasticsearch</module>-->

@@ -17,8 +17,8 @@ spring:
     username: guest
     password: guest
   zipkin:
-    rabbitmq:
-      queue: zipkin
+    sender:
+      type: rabbit
 
 # 注：Spring Boot2不能用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
 # 原因：https://github.com/spring-projects/spring-boot/issues/13042
