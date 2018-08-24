@@ -2,14 +2,19 @@ package com.itmuch.cloud.study.entity;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 @Entity
 public class User {
+  public User() {
+  }
+
+  public User(Long id, String username, String name, Integer age, BigDecimal balance) {
+    this.id = id;
+    this.username = username;
+    this.name = name;
+    this.age = age;
+    this.balance = balance;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;

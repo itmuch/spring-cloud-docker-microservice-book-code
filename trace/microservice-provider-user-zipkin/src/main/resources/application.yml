@@ -7,11 +7,7 @@ spring:
     generate-ddl: false
     show-sql: true
     hibernate:
-      ddl-auto: none
-  datasource:                           # 指定数据源
-    platform: h2                        # 指定数据源类型
-    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
-    data: classpath:data.sql            # 指定h2数据库的数据脚本
+      ddl-auto: create-drop
   zipkin:
     base-url: http://zipkin-server/
   sleuth:
@@ -30,3 +26,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+
+# 注：Spring Boot2不能用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
+# 原因：https://github.com/spring-projects/spring-boot/issues/13042
+# https://github.com/spring-projects/spring-boot/issues/13539
