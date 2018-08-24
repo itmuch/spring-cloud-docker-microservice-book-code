@@ -12,7 +12,7 @@ spring:
     base-url: http://zipkin-server/
   sleuth:
     sampler:
-      percentage: 1.0
+      probability: 1.0
 
 logging:                                # 配置日志级别，让hibernate打印出执行的SQL
   level:

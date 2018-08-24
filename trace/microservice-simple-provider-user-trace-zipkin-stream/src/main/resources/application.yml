@@ -14,7 +14,7 @@ spring:
     name: microservice-provider-user
   sleuth:
     sampler:
-      percentage: 1.0
+      probability: 1.0
   rabbitmq:
     host: localhost
     port: 5672
