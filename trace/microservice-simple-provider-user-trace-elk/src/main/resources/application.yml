@@ -6,10 +6,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
-  datasource:                           # 指定数据源
-    platform: h2                        # 指定数据源类型
-    schema: classpath:schema.sql        # 指定h2数据库的建表脚本
-    data: classpath:data.sql            # 指定h2数据库的数据脚本
 logging:
   level:
     root: INFO
