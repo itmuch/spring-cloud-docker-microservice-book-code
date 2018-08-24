@@ -1,5 +1,6 @@
 package com.itmuch.cloud.study.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
