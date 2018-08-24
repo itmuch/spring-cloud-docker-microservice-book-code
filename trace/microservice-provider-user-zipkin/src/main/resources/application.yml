@@ -10,6 +10,7 @@ spring:
       ddl-auto: create-drop
   zipkin:
     base-url: http://zipkin-server/
+    discovery-client-enabled: true
   sleuth:
     sampler:
       probability: 1.0
@@ -26,6 +27,12 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+
+zipkin-server:
+  ribbon:
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: localhost:9422,localhost:9423
+
 
 # 注：Spring Boot2不能用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
 # 原因：https://github.com/spring-projects/spring-boot/issues/13042
