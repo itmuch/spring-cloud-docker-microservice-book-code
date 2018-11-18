@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: microservice-foo
+  cloud:
+    consul:
+      config:
+        # 启用consul config
+        enabled: true
+        # 配置文件的前缀文件夹名
+        prefix: configuration
+        format: files
+      host: 127.0.0.1
+      port: 8500
+  profiles:
+    active: dev

@@ -1,0 +1,38 @@
+server:
+  port: 8000
+spring:
+  application:
+    # 指定应用名称
+    name: microservice-provider-user
+  cloud:
+    consul:
+      discovery:
+        # 指定实例ID，如果不指定，那么默认是：${spring.application.name}:comma,separated,profiles:${server.port}
+        # 这意味着：如果没指定profile，那么多个实例的instance-id都是应用名称-端口，实例ID就会相同
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        # 指定健康检查路径
+        health-check-path: /actuator/health
+        # 多久检查一次，例如：15s、1m
+        health-check-interval: 15s
+        # 元数据map：foo=bar,baz=baz，可以使用ServiceInstance.getMetadata()获取到
+        tags: foo=bar, baz
+      host: 127.0.0.1
+      # consul端口
+      port: 8500
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+
+
+# 注：Spring Boot2不能用spring.datasource.schema/data指定初始化SQL脚本，否则与actuator不能共存
+# 原因：https://github.com/spring-projects/spring-boot/issues/13042
+# https://github.com/spring-projects/spring-boot/issues/13539

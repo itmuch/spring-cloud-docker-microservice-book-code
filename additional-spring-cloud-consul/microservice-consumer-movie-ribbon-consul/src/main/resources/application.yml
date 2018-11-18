@@ -1,0 +1,13 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        health-check-path: /actuator/health
+        health-check-interval: 15s
+      host: 127.0.0.1
+      port: 8500
