@@ -19,8 +19,13 @@ logging:
     com.netflix: DEBUG
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
 
 
 # 这样访问Zuul的/user/1路径，请求将会被转发到microservice-provider-user的/user/1，可查看日志打印，有助于理解。

@@ -12,5 +12,10 @@ eureka:
 zuul:
   ignored-services: microservice-provider-user,microservice-consumer-movie
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

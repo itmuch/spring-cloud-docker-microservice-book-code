@@ -13,5 +13,10 @@ zuul:
   routes:
     microservice-provider-user: /user/**
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

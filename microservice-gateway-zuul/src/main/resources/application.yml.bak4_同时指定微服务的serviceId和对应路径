@@ -15,5 +15,10 @@ zuul:
       service-id: microservice-provider-user
       path: /user/**              # service-id对应的路径
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

@@ -21,5 +21,10 @@ microservice-provider-user:
   ribbon:
     listOfServers: localhost:8000,localhost:8001
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
