@@ -64,5 +64,6 @@
     <module>microservice-consumer-movie-ribbon-customizing-properties</module>
     <module>additional-microservice-consumer-movie-ribbon-hystrix-get-the-exception</module>
     <module>additional-microservice-consumer-movie-ribbon-exception-but-no-fallback</module>
+    <module>additional-microservice-feign-upload</module>
   </modules>
 </project>
